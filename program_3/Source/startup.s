@@ -125,14 +125,15 @@ var				RN 		2
 Reset_Handler   PROC
                 EXPORT  Reset_Handler             [WEAK]                                            
                 
-				;your code here
-				orr r0,r0,#1
-				mov r1, r2	
-				
-				LDR     R0, =stop
-				
-stop            BX      R0
-                ENDP
+			  MOV  R0, #0
+			  MOV  R1, #5
+loop  
+			  ADD  R0, R0, R1
+			  SUBS R1, R1, #1
+			  BNE  loop
+stop  
+			  B    stop
+			  ENDP
 
 
 ; Dummy Exception Handlers (infinite loops which can be modified)

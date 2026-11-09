@@ -125,9 +125,12 @@ var				RN 		2
 Reset_Handler   PROC
                 EXPORT  Reset_Handler             [WEAK]                                            
                 
-				;your code here
-				orr r0,r0,#1
-				mov r1, r2	
+				MOV R3, #5
+				MOV R4, #7
+				MOV R5, #-2
+				
+				SUB R6, R4, R3
+				ADD R7, R6, R5
 				
 				LDR     R0, =stop
 				
